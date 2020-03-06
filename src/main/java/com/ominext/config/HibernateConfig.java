@@ -30,7 +30,7 @@ public class HibernateConfig {
     }
 
     @Autowired
-    @Bean(name = "sessionFactory")
+    @Bean(name = "entityManagerFactory")
     public SessionFactory getSessionFactory(DataSource dataSource) throws Exception {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", env.getProperty("spring.jpa.properties.hibernate.dialect"));

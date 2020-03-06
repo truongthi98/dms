@@ -24,7 +24,9 @@ function initTableData() {
     ];
     table = $('#users').DataTable({
         "processing": true,
-        data,
+        "ajax":{
+            "url" : "/"
+        },
         columns:[
             { data: 'UserID' },
             { data: 'Họ và tên' },
