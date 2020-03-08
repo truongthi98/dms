@@ -15,7 +15,7 @@ public class customerDeviceController {
     @Autowired
     customerDeviceService customerDeviceService;
 
-    @GetMapping
+    @GetMapping("/")
     public ResponseEntity<ServiceResult> findAllCustomerDevice(){
         return new ResponseEntity<ServiceResult>(customerDeviceService.findAll(), HttpStatus.OK);
     }

@@ -10,17 +10,16 @@ public class customerDevice {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name ="device_type")
+    private String type;
     @Column(name = "device_code")
-    private String deviceCode;
-
-    @Column(name = "device_id")
-    private Long deviceId;
+    private String code;
 
     @Column(name = "device_description")
     private String description;
 
-    @Column(name = "staff_id")
-    private Long staffId;
+    @Column(name = "status")
+    private String status;
 
     @Column(name = "staff_name")
     private String staffName;
@@ -28,10 +27,7 @@ public class customerDevice {
     @Column(name = "staff_email")
     private String staffEmail;
 
-    @Column(name = "devicemanager_name")
-    private String deviceManagerName;
-
-    @Column(name = "gen_code_date")
+       @Column(name = "gen_code_date")
     private Date genCodeDate;
 
     @Column(name = "hand_over_date")
@@ -51,20 +47,20 @@ public class customerDevice {
         this.id = id;
     }
 
-    public String getDeviceCode() {
-        return deviceCode;
+    public String getType() {
+        return type;
     }
 
-    public void setDeviceCode(String deviceCode) {
-        this.deviceCode = deviceCode;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public Long getDeviceId() {
-        return deviceId;
+    public String getCode() {
+        return code;
     }
 
-    public void setDeviceId(Long deviceId) {
-        this.deviceId = deviceId;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getDescription() {
@@ -75,12 +71,12 @@ public class customerDevice {
         this.description = description;
     }
 
-    public Long getStaffId() {
-        return staffId;
+    public String getStatus() {
+        return status;
     }
 
-    public void setStaffId(Long staffId) {
-        this.staffId = staffId;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getStaffName() {
@@ -97,14 +93,6 @@ public class customerDevice {
 
     public void setStaffEmail(String staffEmail) {
         this.staffEmail = staffEmail;
-    }
-
-    public String getDeviceManagerName() {
-        return deviceManagerName;
-    }
-
-    public void setDeviceManagerName(String deviceManagerName) {
-        this.deviceManagerName = deviceManagerName;
     }
 
     public Date getGenCodeDate() {
@@ -140,4 +128,18 @@ public class customerDevice {
     }
 
     public customerDevice(){}
+
+    public customerDevice(String type, String code, String description, String status, String staffName, String staffEmail, Date genCodeDate, Date handOverDate, Date revokeDate, Date returnDate) {
+        this.type = type;
+        this.code = code;
+        this.description = description;
+        this.status = status;
+        this.staffName = staffName;
+        this.staffEmail = staffEmail;
+        this.genCodeDate = genCodeDate;
+        this.handOverDate = handOverDate;
+        this.revokeDate = revokeDate;
+        this.returnDate = returnDate;
+    }
+
 }

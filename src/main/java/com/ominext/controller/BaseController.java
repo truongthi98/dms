@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BaseController {
 
-    @RequestMapping(value = { "/", "/login" })
+    @RequestMapping(value = {"/login" })
     public String login(@RequestParam(required = false) String message, final Model model) {
         if (message != null && !message.isEmpty()) {
             if (message.equals("logout")) {
