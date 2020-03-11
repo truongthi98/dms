@@ -16,25 +16,29 @@ import com.ominext.entities.customerDevice;
 public class customerDAO {
 	 @Autowired
 	  private SessionFactory sessionFactory;
-	  public void save(final customerDevice cd) {
+
+	public List<customerDevice> findAll() {
+		Session session = this.sessionFactory.getCurrentSession();
+		return session.createQuery("FROM customerDevice", customerDevice.class).getResultList();
+	}
+
+	 public void save(final customerDevice cd) {
 	    Session session = this.sessionFactory.getCurrentSession();
 	    session.save(cd);
 	  }
+
 	  public void update(final customerDevice cd) {
 	    Session session = this.sessionFactory.getCurrentSession();
 	    session.update(cd);
-	  }
+	}
 	  public customerDevice findById(final int id) {
 	    Session session = this.sessionFactory.getCurrentSession();
 	    return session.get(customerDevice.class, id);
 	  }
+
 	  public void delete(final customerDevice cd) {
 	    Session session = this.sessionFactory.getCurrentSession();
 	    session.remove(cd);
-	  }
-	  public List<customerDevice> findAll() {
-	    Session session = this.sessionFactory.getCurrentSession();
-	    return session.createQuery("FROM customerDevice", customerDevice.class).getResultList();
 	  }
 
 }

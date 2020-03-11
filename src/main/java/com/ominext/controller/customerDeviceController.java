@@ -21,11 +21,12 @@ public class customerDeviceController {
     	System.out.println(re.size());
         return re;
     }
-    @PostMapping(produces = { "application/json"})
-    public void saveNewCustomerDevice(@RequestBody customerDevice cd){
-        customerDeviceService.save(cd);
-
+    @PostMapping("/")
+    public customerDevice addCustomerDevice(@RequestBody customerDevice cd){
+        try{
+            return customerDeviceService.addCustomerDevice(cd);
+        } catch (Exception e){
+            throw e;
+        }
     }
-
-  
 }

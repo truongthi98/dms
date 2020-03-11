@@ -18,8 +18,18 @@ public class customerDeviceService {
         return customerDAO.findAll();
     }
 
-    public void save(customerDevice cd){
+    public customerDevice addCustomerDevice(customerDevice cd){
+        cd.setType(cd.getType());
+        cd.setCode(cd.getCode());
+        cd.setDescription(cd.getDescription());
+        cd.setStatus(cd.getStatus());
+        cd.setStaffName(cd.getStaffName());
+        cd.setStaffEmail(cd.getStaffEmail());
+        cd.setGenCodeDate(cd.getGenCodeDate());
+        cd.setHandOverDate(cd.getHandOverDate());
+        cd.setRevokeDate(cd.getRevokeDate());
+        cd.setReturnDate(cd.getReturnDate());
         customerDAO.save(cd);
+        return cd;
     }
-    
 }

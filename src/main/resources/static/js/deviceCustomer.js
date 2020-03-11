@@ -107,38 +107,32 @@ $(document).ready(function (){
                 "revokeDate": revokeDate,
                 "returnDate": returnDate,
             }),
-            success: function (jqXHR) {
+            success: function () {
                 alert('Thêm mới thiết bị khách hàng thành công!');
-                addCustomerDevice(jqXHR);
+                data.push({
+                    id: id,
+                    code: code,
+                    type: type,
+                    description: description,
+                    status: status,
+                    staffName: staffName,
+                    staffEmail: staffEmail,
+                    genCodeDate: genCodeDate,
+                    handOverDate: handOverDate,
+                    revokeDate: revokeDate,
+                    returnDate: returnDate,
+                    Action: "<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#Editqlnk' style='margin-right:5px'>Sửa</button>" +
+                        "<button type='button' onclick=\"alert('Bạn có muốn xóa không!!!')\" class='btn btn-danger btn-sm' data-toggle='modal' data-target='#Deleteqlnk'>Xóa</button>"
+                });
+                console.log(data);
                 location.reload();
+            },
+            error:function () {
+                console.log(data);
             }
         })
     }
-function showLoadingGif(callback) {
-    $('#loading-gif').css('visibility', 'visible');
-    if (callback) callback();
-}
 
-function hideLoadingGif() {
-    $('#loading-gif').css('visibility', 'hidden');
-}
-function addCustomerDevice(jqXHR) {
-    data.push({
-        id: jqXHR.id,
-        code: jqXHR.code,
-        type: jqXHR.type,
-        description: jqXHR.description,
-        status: jqXHR.status,
-        staffName: jqXHR.staffName,
-        staffEmail: jqXHR.staffEmail,
-        genCodeDate: jqXHR.genCodeDate,
-        handOverDate: jqXHR.handOverDate,
-        revokeDate: jqXHR.revokeDate,
-        returnDate: jqXHR.returnDate,
-        Action: "<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#Editqlnk' style='margin-right:5px'>Sửa</button>" +
-            "<button type='button' onclick=\"alert('Bạn có muốn xóa không!!!')\" class='btn btn-danger btn-sm' data-toggle='modal' data-target='#Deleteqlnk'>Xóa</button>"
-    })
-}
 
 
 
