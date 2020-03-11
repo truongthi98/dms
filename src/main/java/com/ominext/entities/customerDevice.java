@@ -1,7 +1,7 @@
 package com.ominext.entities;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name = "customerdevice")
@@ -27,7 +27,7 @@ public class customerDevice {
     @Column(name = "staff_email")
     private String staffEmail;
 
-       @Column(name = "gen_code_date")
+    @Column(name = "gen_code_date")
     private Date genCodeDate;
 
     @Column(name = "hand_over_date")
